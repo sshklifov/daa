@@ -31,6 +31,23 @@ int maximumUneven(int* arr, int n)
     return strongTeam-weakTeam;
 }
 
+int knapsackSlow(int* arr, int n, int limit)
+{
+    // g.i. arr contains distinct elements
+
+    std::sort(arr, arr+n);
+
+    int sum = 0;
+    for (int i=0; i < n; ++i)
+    {
+        if (sum+arr[i] > limit) return i;
+        else sum+=arr[i];
+    }
+
+    return n;
+}
+
+// helper function
 int partition(int* arr, int n, int pivotIdx)
 {
     std::swap(arr[n-1], arr[pivotIdx]);
@@ -49,22 +66,6 @@ int partition(int* arr, int n, int pivotIdx)
 
     std::swap(arr[pp], arr[n-1]);
     return pp;
-}
-
-int knapsackSlow(int* arr, int n, int limit)
-{
-    // g.i. arr contains distinct elements
-
-    std::sort(arr, arr+n);
-
-    int sum = 0;
-    for (int i=0; i < n; ++i)
-    {
-        if (sum+arr[i] > limit) return i;
-        else sum+=arr[i];
-    }
-
-    return n;
 }
 
 int knapsackFast(int* arr, int n, int limit)
