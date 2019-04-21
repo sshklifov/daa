@@ -10,8 +10,8 @@
     / \
    b   c
 
-   case 1) Adj[a] = [b, c] ; Adj[b] = []  ; Adj[c] -> []
-   case 2) Adj[a] = [b, c] ; Adj[b] = [a] ; Adj[c] -> [a]
+   case 1) Adj[a] = [b, c] ; Adj[b] = []  ; Adj[c] = []
+   case 2) Adj[a] = [b, c] ; Adj[b] = [a] ; Adj[c] = [a]
 
    We can convert from 1) to 2) by adding the symmetric edges,
    e.g. create a new graph and for each edge (u, v) add v to
