@@ -1,28 +1,40 @@
-#include "Traversals.h"
+#include <queue>
+
+enum {WHITE, BLACK1, BLACK2};
+std::vector<int> color;
+
+void bfsVisit(std::vector<int>* g, int s)
+{
+    color[s] = BLACK1;
+
+    std::queue<int> q;
+    q.push(s);
+
+    while(!q.empty())
+    {
+        int u = q.front();
+        q.pop();
+
+        for (int v : g[u])
+        {
+            if (color[v] == WHITE)
+            {
+                color[v] = (color[u]==BLACK1 ? BLACK2 : BLACK1);
+                q.push(v);
+            }
+        }
+    }
+}
 
 bool isBipartite(std::vector<int>* g, int n)
 {
-    enum {COLOR1, COLOR2, NOCOLOR};
-    std::vector<int> color (n, NOCOLOR);
+    color.assign(n, WHITE);
 
-    for (int i = 0; i < n; ++i)
+    for (int v = 0; v < n; ++v)
     {
-        if (color[i] == NOCOLOR)
+        if (color[v] == WHITE)
         {
-            bfs(g, n, i);
-
-            std::vector<bool> good;
-            for (int u = 0; u < n; ++u)
-            {
-                if (dist[u]!=INT_MAX && dist[u] % 2 == 1)
-                {
-                    color[u] = COLOR1;
-                }
-                if (dist[u]!=INT_MAX && dist[u] % 2 == 0)
-                {
-                    color[u] = COLOR2;
-                }
-            }
+            bfsVisit(g, v);
         }
     }
 
