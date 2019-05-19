@@ -1,3 +1,10 @@
+/**
+ * @file DagNumPaths.cpp
+ *
+ * Given a dag, count the number of simple paths from a source
+ * vertex s, for every s.
+ */
+
 #include <vector>
 #include <stack>
 #include <climits>

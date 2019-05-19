@@ -1,3 +1,10 @@
+/**
+ * @file DagNumPaths.cpp
+ *
+ * Given a weighted dag and a source vertex s, find the least
+ * cost of reaching a vertex, for every vertex.
+ */
+
 #include <vector>
 #include <stack>
 #include <climits>

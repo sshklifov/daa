@@ -1,3 +1,13 @@
+/**
+ * @file VerifyDijkstra.cpp
+ *
+ * You are given a weighted directed graph and a random spanning
+ * tree of the graph, which is rooted at s. You are interested
+ * whether any instance of Dijkstra's algorithm will generate
+ * this tree. For simplicity, you will be given the cost to reach
+ * each vertex, instead of the whole tree.
+ */
+
 #include <vector>
 
 struct Edge

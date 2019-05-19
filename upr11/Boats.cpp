@@ -1,3 +1,17 @@
+/**
+ * @file Boats.cpp
+ *
+ * Input: weighted undirected graph. The weights of the edges
+ * represent how wide a canal is between vertices (we are
+ * traveling with a boat). The cost of a path is defined as the
+ * minimum weight of all edges in that path. This means that a
+ * boat with that width will 'fit' in every canal and thus be
+ * able to traverse the path. Moreover, no bigger boat will be
+ * able to do so. We are interested in the maximum possible
+ * width a boat can be to reach a vertex from the source, for
+ * every vertex.
+ */
+
 #include "PriorityQueue.h"
 #include <limits>
 #include <cmath>
