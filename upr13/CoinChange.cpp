@@ -46,5 +46,12 @@ int main()
 
     std::cout << dp[n-1][sum] << std::endl;
 
+    for (int i = 0; i < n; ++i)
+    {
+        delete[] dp[i];
+    }
+    delete[] dp;
     delete[] coins;
+
+    return 0;
 }
